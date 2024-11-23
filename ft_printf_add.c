@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_add.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaskour <iaskour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 15:46:08 by iaskour           #+#    #+#             */
-/*   Updated: 2024/11/23 16:17:09 by iaskour          ###   ########.fr       */
+/*   Created: 2024/11/23 15:45:00 by iaskour           #+#    #+#             */
+/*   Updated: 2024/11/23 16:21:24 by iaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_printf_add(unsigned long address, char *symbols, int flag)
+{
+	int	count;
 
-int	ft_printf(const char *format, ...);
-int	ft_putnbr(int n);
-int	ft_putchar(char c);
-int	ft_printf_hex(unsigned int n, char *symbols);
-int	ft_printf_add(unsigned long address, char *symbols, int flag);
-int	ft_printf_uns(unsigned int n);
-int	ft_putstr(char *str);
-#endif
+	count = 0;
+	if (flag == 0)
+	{
+		count += ft_putstr("0x");
+		flag = 1;
+	}
+	if (address < 16)
+		count += ft_putchar(symbols[address]);
+	else
+	{
+		count += ft_printf_add(address / 16, symbols, flag);
+		count += ft_printf_add(address % 16, symbols, flag);
+	}
+	return (count);
+}

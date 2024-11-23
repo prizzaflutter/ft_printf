@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaskour <iaskour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 15:46:08 by iaskour           #+#    #+#             */
-/*   Updated: 2024/11/23 16:17:09 by iaskour          ###   ########.fr       */
+/*   Created: 2024/11/22 15:50:42 by iaskour           #+#    #+#             */
+/*   Updated: 2024/11/23 16:22:45 by iaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_printf_hex(unsigned int n, char *symbols)
+{
+	int	count;
 
-int	ft_printf(const char *format, ...);
-int	ft_putnbr(int n);
-int	ft_putchar(char c);
-int	ft_printf_hex(unsigned int n, char *symbols);
-int	ft_printf_add(unsigned long address, char *symbols, int flag);
-int	ft_printf_uns(unsigned int n);
-int	ft_putstr(char *str);
-#endif
+	count = 0;
+	if (n < 16)
+		count += ft_putchar(symbols[n]);
+	else
+	{
+		count += ft_printf_hex(n / 16, symbols);
+		count += ft_printf_hex(n % 16, symbols);
+	}
+	return (count);
+}

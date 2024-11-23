@@ -1,12 +1,20 @@
 {
 	"files.associations": {
-		"__bit_reference": "c",
+		"__functional_base": "c",
+		"__functional_base_03": "c",
+		"__hash_table": "c",
+		"__tuple": "c",
 		"algorithm": "c",
-		"bitset": "c",
+		"array": "c",
 		"chrono": "c",
-		"unordered_map": "c",
+		"type_traits": "c",
+		"functional": "c",
+		"iterator": "c",
+		"limits": "c",
+		"memory": "c",
 		"ratio": "c",
-		"printf_header.h": "c",
-		"ft_printf.h": "c"
+		"tuple": "c",
+		"utility": "c",
+		"cstdarg": "c"
 	}
 }

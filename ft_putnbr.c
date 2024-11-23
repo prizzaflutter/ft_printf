@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaskour <iaskour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 15:46:08 by iaskour           #+#    #+#             */
-/*   Updated: 2024/11/23 16:17:09 by iaskour          ###   ########.fr       */
+/*   Created: 2024/11/23 15:01:47 by iaskour           #+#    #+#             */
+/*   Updated: 2024/11/23 16:25:53 by iaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_putnbr(int n)
+{
+	int				count;
+	unsigned int	num;
 
-int	ft_printf(const char *format, ...);
-int	ft_putnbr(int n);
-int	ft_putchar(char c);
-int	ft_printf_hex(unsigned int n, char *symbols);
-int	ft_printf_add(unsigned long address, char *symbols, int flag);
-int	ft_printf_uns(unsigned int n);
-int	ft_putstr(char *str);
-#endif
+	num = n;
+	count = 0;
+	if (n < 0)
+	{
+		count += ft_putchar('-');
+		num = -n;
+	}
+	if (num < 10)
+		count += ft_putchar(num + '0');
+	else
+	{
+		count += ft_putnbr(num / 10);
+		count += ft_putnbr(num % 10);
+	}
+	return (count);
+}

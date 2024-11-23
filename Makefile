@@ -1,4 +1,4 @@
-SOURCE = ft_printf.c ft_putchar.c ft_putstr.c ft_format_base.c
+SOURCE =  ft_putnbr.c ft_printf.c ft_putchar.c ft_putstr.c ft_printf_hex.c ft_printf_add.c 	ft_printf_uns.c
 
 OBJECTS = ${SOURCE:.c=.o}
 NAME = libftprintf.a

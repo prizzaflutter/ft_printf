@@ -6,13 +6,13 @@
 /*   By: iaskour <iaskour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:17:33 by iaskour           #+#    #+#             */
-/*   Updated: 2024/11/23 14:17:40 by iaskour          ###   ########.fr       */
+/*   Updated: 2024/11/23 16:25:25 by iaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
-		return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
