@@ -1,0 +1,12 @@
+{
+	"files.associations": {
+		"__bit_reference": "c",
+		"algorithm": "c",
+		"bitset": "c",
+		"chrono": "c",
+		"unordered_map": "c",
+		"ratio": "c",
+		"printf_header.h": "c",
+		"ft_printf.h": "c"
+	}
+}
