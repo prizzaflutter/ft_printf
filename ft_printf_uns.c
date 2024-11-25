@@ -6,7 +6,7 @@
 /*   By: iaskour <iaskour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 15:43:19 by iaskour           #+#    #+#             */
-/*   Updated: 2024/11/23 16:24:46 by iaskour          ###   ########.fr       */
+/*   Updated: 2024/11/25 12:09:02 by iaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 int	ft_printf_uns(unsigned int n)
 {
-	int				count;
-	unsigned int	num;
+	int	count;
 
-	num = (unsigned int)n;
 	count = 0;
-	if (num < 10)
-		count += ft_putchar(num + '0');
+	if (n < 10)
+		count += ft_putchar(n + '0');
 	else
 	{
-		count += ft_printf_uns(num / 10);
-		count += ft_printf_uns(num % 10);
+		count += ft_printf_uns(n / 10);
+		count += ft_printf_uns(n % 10);
 	}
 	return (count);
 }

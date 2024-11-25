@@ -6,7 +6,7 @@
 /*   By: iaskour <iaskour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:18:21 by iaskour           #+#    #+#             */
-/*   Updated: 2024/11/25 09:48:57 by iaskour          ###   ########.fr       */
+/*   Updated: 2024/11/25 13:15:25 by iaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	print_format(char format, va_list ap)
 	else if (format == 'c')
 		num += ft_putchar(va_arg(ap, int));
 	else if (format == 's')
-		num += ft_putstr(va_arg(ap, char *));
+		num += ft_putstr(va_arg(ap, void *));
 	else if (format == 'i' || format == 'd')
 		num += ft_putnbr(va_arg(ap, int));
 	else if (format == 'u')

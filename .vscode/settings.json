@@ -15,6 +15,7 @@
 		"ratio": "c",
 		"tuple": "c",
 		"utility": "c",
-		"cstdarg": "c"
+		"cstdarg": "c",
+		"ft_printf.h": "c"
 	}
 }
